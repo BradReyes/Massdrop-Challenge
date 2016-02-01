@@ -6,6 +6,7 @@ var req = require('request');
 var STATUS_OK = 200;
 var SERVER_ERROR = 500;
 var NOT_FOUND = 404;
+var BAD_REQUEST = 400;
 
 // The object 'fetching' is passed in. It's purpose is to
 // tell which jobs are still being fetched.
@@ -77,6 +78,9 @@ module.exports = function(app, fetching) {
   // Creates a job id and queues the job up to store in the DB
   app.post('/create', function(request, response) {
     var url = request.body.url;
+    if (url == undefined || url == null) {
+      response.status(BAD_REQUEST).json({"Error": "JSON passed in is non-existent or incorrect"});
+    }
     var id = require('crypto').createHash('md5').update(url).digest('hex');
 
     if (fetching[id]) { //already fetching
