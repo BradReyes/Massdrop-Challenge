@@ -1,7 +1,7 @@
 # Massdrop-Challenge
 Create a job queue whose workers fetch data from a URL and ....
 
-The update didn't chnage much except add the request queue. Again, run MongoDB first with:
+The update didn't change much except add the request queue. Again, run MongoDB first with:
 mongod --dbpath data
 
 and app.js with nodemon app.js (or just node).
