@@ -13,3 +13,6 @@ is 'url', such as url=https://google.com in the case of google.com.
 localhost:3000/status/c7b920f57e553df2bb68272f61570210 as an example.
 
 The rest of the code is well commented, so look at the code (which isn't too long) for implementation details.
+
+Don't worry about index.js, it isn't used. When I renamed the file, it didn't delete it in GithHub. Look at fetch.js for the file that's
+actually being used. 
